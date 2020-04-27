@@ -5,7 +5,7 @@ const Block = styled.View`
   ${({width}) => width && `width: ${width};`}
   ${({height}) => height && `height: ${height};`}
   ${({margin}) => margin && `margin: ${margin};`}
-  ${({padding}) => padding && `padding: ${padding};`}
+  ${({padding}) => padding && `padding: ${padding};`} 
   ${({paddingVertical}) =>
     paddingVertical && `padding-vertical: ${paddingVertical};`}
   ${({paddingHorizontal}) =>
@@ -28,13 +28,13 @@ const Block = styled.View`
   ${({shadow}) =>
     shadow &&
     `
-    shadow-opacity: 0.14;
-    showdow-radius: 4;
-    shadowColor; #000;
-    showdowOffset: {
-      height: 0,
-      width: 0
-    }
+    shadow-opacity: 0.5;
+    shadow-radius: 20;
+    shadow-color: #000;
+    shawdow-offset: {
+      width: 10,
+      height: 10,
+    };
   `}
   ${({style}) => style && {...style}}
 `;
