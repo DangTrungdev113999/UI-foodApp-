@@ -7,21 +7,24 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Splash from './src/screens/SplashScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import HomeScreen from './src/screens/HomeScreen';
+
+const { Navigator, Screen } = createStackNavigator();
 
 const App = () => {
   return (
-    <>
-      <Splash/>
-    </>
+    <NavigationContainer>
+      <Navigator initialRouteName="Home" headerMode='none'>
+        <Screen name='Home' component={HomeScreen} />
+        <Screen name="Splash" component={Splash} />
+        <Screen name="Login" component={LoginScreen} />
+      </Navigator>
+    </NavigationContainer>
   );
 };
 

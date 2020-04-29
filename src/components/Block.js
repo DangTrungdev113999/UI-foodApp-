@@ -1,31 +1,27 @@
 import styled from 'styled-components';
 
 const Block = styled.View`
-  flex: 1;
-  ${({width}) => width && `width: ${width};`}
-  ${({height}) => height && `height: ${height};`}
-  ${({margin}) => margin && `margin: ${margin};`}
-  ${({padding}) => padding && `padding: ${padding};`} 
-  ${({paddingVertical}) =>
-    paddingVertical && `padding-vertical: ${paddingVertical};`}
-  ${({paddingHorizontal}) =>
-    paddingHorizontal && `padding-horizontal: ${paddingHorizontal};`}
-  ${({border}) =>
+  ${({ flex }) => flex && `flex: ${flex};`}
+  ${({ width }) => width && `width: ${width};`}
+  ${({ height }) => height && `height: ${height};`}
+  ${({ m }) => m && `margin: ${m};`}
+  ${({ p }) => p && `padding: ${p};`}
+  ${({ border }) =>
     border &&
     `
-    border-width: 1;
+    border-width: 1px;
     border-color: gray;
   `}
-  ${({borderWidth}) => borderWidth && `border-width: ${borderWidth};`}
-  ${({borderColor}) => borderColor && `border-color: ${borderColor};`}
-  ${({bgColor}) => bgColor && `background-color: ${bgColor};`}
-  ${({centered}) => centered && 'justify-content: center;'}
-  ${({justifyContent}) =>
+  ${({ borderWidth }) => borderWidth && `border-width: ${borderWidth}px;`}
+  ${({ borderColor }) => borderColor && `border-color: ${borderColor};`}
+  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius}`}
+  ${({ bgColor }) => bgColor && `background-color: ${bgColor};`}
+  ${({ centered }) => centered && 'justify-content: center;'}
+  ${({ justifyContent }) =>
     justifyContent && `justify-content: ${justifyContent}`}
-  ${({direction}) => direction && `flex-direction: ${direction};`}
-  ${({middle}) => middle && 'align-items: center;'} 
-  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`}
-  ${({shadow}) =>
+  ${({ direction }) => direction && `flex-direction: ${direction};`}
+  ${({ middle }) => middle && 'align-items: center;'}
+  ${({ shadow }) =>
     shadow &&
     `
     shadow-opacity: 0.5;
@@ -36,7 +32,8 @@ const Block = styled.View`
       height: 10,
     };
   `}
-  ${({style}) => style && {...style}}
+  ${({ block }) => block && 'width: 100%'}
+  ${({ style }) => style && { ...style }}
 `;
 
 export default Block;

@@ -2,16 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TextInput = styled.TextInput`
-  ${({margin}) => margin && `margin: ${margin};`}
-  ${({padding}) => padding && `padding: ${padding};`}
+  ${({m}) => m && `margin: ${m};`}
+  ${({p}) => p && `padding: ${p};`}
+  ${({ bgColor }) => bgColor && `background-color: ${bgColor};`}
   ${({border}) =>
     border &&
     `
-    border-width: 1;
+    border-width: 1px;
     border-color: gray;
   `}
-  ${({radius}) => radius && 'border-radius: 8;'}
-  ${({fontSize}) => fontSize && `font-size: ${fontSize};`}
+  ${({radius}) => radius && 'border-radius: 8px;'}
+  ${({fontSize}) => fontSize && `font-size: ${fontSize}px;`}
   ${({style}) => style && {...style}}
 `;
 

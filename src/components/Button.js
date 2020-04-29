@@ -2,39 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TouchableOpacity = styled.TouchableOpacity`
-  flex: 1;
+  ${({flex}) => flex && ` flex: ${flex}`}
   ${({width}) => width && `width: ${width};`}
   ${({height}) => height && `height: ${height};`}
-  ${({margin}) => margin && `margin: ${margin};`}
-  ${({padding}) => padding && `padding: ${padding};`}
+  ${({m}) => m && `margin: ${m};`}
+  ${({p}) => p && `padding: ${p};`}
   ${({border}) =>
     border &&
     `
-    border-width: 1;
+    border-width: 1px;
     border-color: gray;
   `}
-  ${({borderWidth}) => borderWidth && `border-width: ${borderWidth};`}
+  ${({borderWidth}) => borderWidth && `border-width: ${borderWidth}px;`}
   ${({borderColor}) => borderColor && `border-color: ${borderColor};`}
+  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}px`}
   ${({bgColor}) => bgColor && `background-color: ${bgColor};`}
+  ${({direction}) => direction && `flex-direction: ${direction};`}
   ${({centered}) => centered && 'justify-content: center;'}
+  ${({middle}) => middle && 'align-items: center;'}
   ${({justifyContent}) =>
     justifyContent && `justify-content: ${justifyContent}`}
-  ${({direction}) => direction && `flex-direction: ${direction};`}
-  ${({middle}) => middle && 'align-items: center;'} 
-  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`}
   ${({shadow}) =>
     shadow &&
     `
     shadow-opacity: 0.14;
-    showdow-radius: 4;
-    shadowColor; #000;
-    showdowOffset: {
-      height: 0,
+    shadow-color: #000;
+    shadow-radius: 4px;
+    elevation: 4;
+    shawdow-offset: {
+      height: 10,
       width: 0
     }
   `}
   ${({style}) => style && {...style}}
-
 `;
 
 const Button = ({children, onPress, ...rest}) => (
