@@ -14,7 +14,7 @@ const Image = styled.Image`
 function LoginScreen() {
   return (
     <Body>
-      <Block flex={1}  p='24px' bgColor='#F7F5F7'>
+      <Block flex={1} p='24px' bgColor='#F7F5F7'>
         <Text h3 center m='50px 0' p='50px 0 0'>Sign in</Text>
 
         <Block m="20px 0 0">

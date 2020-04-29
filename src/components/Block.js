@@ -14,7 +14,7 @@ const Block = styled.View`
   `}
   ${({ borderWidth }) => borderWidth && `border-width: ${borderWidth}px;`}
   ${({ borderColor }) => borderColor && `border-color: ${borderColor};`}
-  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius}`}
+  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius}px`}
   ${({ bgColor }) => bgColor && `background-color: ${bgColor};`}
   ${({ centered }) => centered && 'justify-content: center;'}
   ${({ justifyContent }) =>
@@ -24,15 +24,15 @@ const Block = styled.View`
   ${({ shadow }) =>
     shadow &&
     `
-    shadow-opacity: 0.5;
-    shadow-radius: 20;
+    shadow-opacity: 0.14;
     shadow-color: #000;
+    shadow-radius: 4px;
+    elevation: 4;
     shawdow-offset: {
-      width: 10,
       height: 10,
-    };
+      width: 0
+    }
   `}
-  ${({ block }) => block && 'width: 100%'}
   ${({ style }) => style && { ...style }}
 `;
 
