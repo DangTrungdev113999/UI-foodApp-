@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ScrollView } from 'react-native';
 
 const SafeAreaView = styled.SafeAreaView`
   flex: 1;
@@ -12,7 +13,11 @@ const SafeAreaView = styled.SafeAreaView`
 const Body = ({ children, ...rest }) => {
   return (
     <SafeAreaView {...rest}>
-      {children}
+      <ScrollView
+        showsVerticalScrollIndicator={false}   
+      >
+        {children}
+      </ScrollView>
     </SafeAreaView>
 
   );

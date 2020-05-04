@@ -7,40 +7,45 @@ import styled from 'styled-components';
 import TopHeader from './TopHeader';
 
 import { Text, Block, Button, Input } from '../../components';
-import categories from '../../mooks/categories.json';
+import foodApp from '../../mooks/foodApp.json';
 
-const W = Dimensions.get('window').width / 4;
+const W = Dimensions.get('window').width / 2;
 
 const Image = styled.Image`
   width: ${W}px;
-  height: ${(W * 9) / 16}px;
+  height: ${W / 2}px;
   border-radius: 8px;
 `
 
-function TopCategories() {
-
+function NearByDetail() {
 
   const renderItem = ({ item }) => {
     return (
-      <Button p="5px">
-        <Image source={{ uri: item.image }} />
-        <Text p="8px" center>{item.name}</Text>
+      <Button shadow m='5px' borderRadius={8} p='10px' bgColor="#fff">
+        <Block>
+          <Image source={{ uri: item.image }} />
+          <Block p="8px 0">
+            <Text size={16} weight='bold'>{item.name}</Text>
+            <Text color="#AAAAAA">By {item.location}</Text>
+            <Text size={16} weight='bold' >{item.price}</Text>
+          </Block>
+        </Block>
       </Button>
     )
   }
 
   return (
     <Block p='10px'>
-      <TopHeader title='Top Categories' moreTitle='Filter' moreIcon='filter' />
+      <TopHeader title='Near by detail' moreTitle='View all' />
       <FlatList
         horizontal
         keyExtractor={item => item.id}
         showsHorizontalScrollIndicator={false}
-        data={categories}
+        data={foodApp}
         renderItem={renderItem}
       />
     </Block>
   )
 }
 
-export default TopCategories;
+export default NearByDetail;

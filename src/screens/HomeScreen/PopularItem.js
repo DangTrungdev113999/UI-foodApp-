@@ -7,40 +7,47 @@ import styled from 'styled-components';
 import TopHeader from './TopHeader';
 
 import { Text, Block, Button, Input } from '../../components';
-import categories from '../../mooks/categories.json';
+import foodApp from '../../mooks/foodApp.json';
 
 const W = Dimensions.get('window').width / 4;
 
 const Image = styled.Image`
   width: ${W}px;
-  height: ${(W * 9) / 16}px;
+  height: ${W}px;
   border-radius: 8px;
 `
 
-function TopCategories() {
-
+function PopularItem() {
 
   const renderItem = ({ item }) => {
     return (
-      <Button p="5px">
-        <Image source={{ uri: item.image }} />
-        <Text p="8px" center>{item.name}</Text>
+      <Button shadow  m='5px' borderRadius={8} p='10px' bgColor="#fff">
+        <Block direction="row">
+          <Image source={{ uri: item.image }} />
+          <Block p="0 8px">
+            <Block flex={1}>
+              <Text size={16} weight='bold'>{item.name}</Text>
+              <Text color="#AAAAAA">By {item.location}</Text>
+            </Block>
+            <Text size={16} weight='bold' >{item.price}</Text>
+          </Block>
+        </Block>
       </Button>
     )
   }
 
   return (
     <Block p='10px'>
-      <TopHeader title='Top Categories' moreTitle='Filter' moreIcon='filter' />
+      <TopHeader title='Popular Items' moreTitle='View all' />
       <FlatList
         horizontal
         keyExtractor={item => item.id}
         showsHorizontalScrollIndicator={false}
-        data={categories}
+        data={foodApp}
         renderItem={renderItem}
       />
     </Block>
   )
 }
 
-export default TopCategories;
+export default PopularItem;

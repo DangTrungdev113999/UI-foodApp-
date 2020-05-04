@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TouchableOpacity = styled.TouchableOpacity`
+  ${({block}) => block && 'flex: 1;'}
   ${({flex}) => flex && ` flex: ${flex}`}
   ${({width}) => width && `width: ${width};`}
   ${({height}) => height && `height: ${height};`}
@@ -28,9 +29,9 @@ const TouchableOpacity = styled.TouchableOpacity`
     shadow-opacity: 0.14;
     shadow-color: #000;
     shadow-radius: 4px;
-    elevation: 4;
+    elevation: 4px;
     shawdow-offset: {
-      height: 10,
+      height: 0,
       width: 0
     }
   `}

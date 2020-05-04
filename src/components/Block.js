@@ -27,9 +27,9 @@ const Block = styled.View`
     shadow-opacity: 0.14;
     shadow-color: #000;
     shadow-radius: 4px;
-    elevation: 4;
+    elevation: 4px;
     shawdow-offset: {
-      height: 10,
+      height: 0,
       width: 0
     }
   `}
