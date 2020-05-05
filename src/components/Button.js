@@ -29,11 +29,7 @@ const TouchableOpacity = styled.TouchableOpacity`
     shadow-opacity: 0.14;
     shadow-color: #000;
     shadow-radius: 4px;
-    elevation: 4px;
-    shawdow-offset: {
-      height: 0,
-      width: 0
-    }
+    elevation: 4;
   `}
   ${({style}) => style && {...style}}
 `;
